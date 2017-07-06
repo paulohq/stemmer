@@ -1,2 +1,8 @@
 *.zip
 *.pdf
+*.xml
+arquivos/*
+.idea/*
+.idea
+cmake-build-debug
+*.out

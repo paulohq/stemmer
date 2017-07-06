@@ -4,6 +4,8 @@
 #include <ctype.h>
 #include "rules.h"
 
+
+
 //Retorna o numero da primeira regra, do array de regras, que pode ser aplicada a uma palavra. Se nenhuma regra puder ser aplicada então retorna -1.
 int primeira_regra(char *palavra_reversa, int num_regra) {
 
@@ -14,9 +16,10 @@ int primeira_regra(char *palavra_reversa, int num_regra) {
 		// Pega a regra atual do vetor de regras.
 		//strcpy(regra, regras[i].sufixo);
 		
-		//Pega o sufixo da palavra passada como parametro no mesmo tamanho da regra encontrada acima.
+		//Pega o sufixo da palavra passada como parametro no mesmo tamanho da regra encontrada acima.		
 		//É feito para poder comparar o sufixo da palavra reversa passada como parâmetro com a regra do vetor de regras.
 		tamanho = strlen(regras[i].sufixo);
+				
 		//Compara o sufixo da palavra reversa com a regra. Se forem iguais retorna o número da regra no vetor de regras
 		if (strncmp(palavra_reversa, regras[i].sufixo, tamanho) == 0) return i;
 
@@ -94,9 +97,8 @@ void reverso(char *palavra, char *palavra_reversa) {
 
 // retorna o stem (radical) para uma palavra.
 char * stemmer(char *palavra) {
-	int intact = 1;
+	int intacto = 1;
 	//boolean stem_found = False;
-
 	char palavra_reversa[64];
 	int num_regra = 0;
 	char regra[10];
@@ -105,7 +107,7 @@ char * stemmer(char *palavra) {
 
 	//Chama rotina para colocar a palavra na ordem reversa.
 	reverso(palavra, palavra_reversa);
-
+	
 	//Laço que percorre as regras até encontrar um '.' ou 'end0' que indica que não tem mais regras para retirar sufixo.
 	while (1) {
 		//Chama rotina para tentar encontrar uma regra de remoção/substituição para a palavra.
@@ -120,7 +122,7 @@ char * stemmer(char *palavra) {
 		strcpy(regra, regras[num_regra].sufixo);
 		
 		//Se 
-		if ((regras[num_regra].asterisco[0] != '*') ) {
+		if ((regras[num_regra].asterisco[0] != '*' || intacto) ) {
 			
 			int tamanho_sufixo = strlen(regras[num_regra].sufixo);
 			int tamanho = tamanho_sufixo - regras[num_regra].qtde;								
@@ -156,11 +158,59 @@ char * stemmer(char *palavra) {
 
 } //end stemmer
 
+//
+void minusculo(char palavra[]) {
+	
+	for(int i = 0; palavra[i]; i++){
+		if (isspace (palavra[i])) {
+			palavra [i] = '\0';
+		}
+		else {
+			palavra[i] = tolower(palavra[i]);
+		}
+	}
+}
+
+void le_arquivo()
+{
+	char url[] = "arquivos/lista-palavras-ingles.txt";
+	FILE *arquivo;
+	char linha[255];
+	int i;
+
+	// Abre um arquivo texto para leitura
+	arquivo = fopen(url, "r");
+	
+	// Se houve erro na abertura
+	if (arquivo == NULL)
+	{
+		printf("Houve um problema na abertura do arquivo.\n");
+		return;
+	}
+
+	char palavra[255];
+	i = 1;
+	while (!feof(arquivo))
+	{		
+		// Lê uma linha até 255 caracteres (inclusive com o '\n').
+		if (fgets(linha, 255, arquivo)) { 
+			printf("linha %d : %s\n", i, linha);
+			minusculo(linha);
+			strcpy(palavra, linha);
+			stemmer(palavra);
+			printf("stem => %s\n\n", palavra);
+		}
+		//exit(0);
+		i++;
+	}
+	fclose(arquivo);
+}
+
 int main(int argc, char *argv[])
 {
-	char palavra[] = "connecting";
+	//le_arquivo();
+	char palavra[] = "greatness";
 	stemmer(palavra);
 	printf("%s\n\n", palavra);
 	return 0;
 }
-
