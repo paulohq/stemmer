@@ -10,11 +10,12 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-//nvcc -arch=sm_20 -c file1.cu
-//        $ g++ -c file2.cpp
-//        $ g++ -o test file1.o file2.o -L/usr/local/cuda/lib64 -lcudart
-//        $ ./test
-__global__ void stemmer(char *d_out, char *d_in);
+
+//nvcc -c kernel_stemmer.cu
+//nvcc kernel_stemmer.o stemmer_inverso_paralelo.cpp
+
+extern void cuda_stemmer(char *buffer, char **ptr, int numthreads);
+
 
 bool le_arquivo(char *filename, char **o_buffer, char ***o_ptr, int *o_numthreads)
 {
@@ -31,7 +32,7 @@ bool le_arquivo(char *filename, char **o_buffer, char ***o_ptr, int *o_numthread
 	char *buffer = new char [tamanhoArquivo + 1];
 	char **ptr = new char *[tamanhoArquivo];
 
-	// Lê o arquivo todo para a memória.
+	// Lê o arquivo inteiro para a memória.
 	if (read (file, (void *) buffer, tamanhoArquivo) < tamanhoArquivo)
 	{
 		close (file);
@@ -70,36 +71,8 @@ int main(int argc, char **argv)
 	int numthreads;
 	le_arquivo(argv[1], &(buffer), &(ptr), &(numthreads));
 
+	cuda_stemmer(buffer, ptr, numthreads);
 	//printf("%d\n", numthreads);
-
-	// Prepara para chamar kernel.
-	const int ARRAY_SIZE = numthreads;
-	const int ARRAY_BYTES = ARRAY_SIZE * sizeof(char);
-
-
-	//declara ponteiros da GPU.
-	char * d_in;
-	char * d_out;
-
-	//alocate GPU memory
-	cudaMalloc((void **) &d_in, ARRAY_BYTES);
-	cudaMalloc((void **) &d_out, ARRAY_BYTES);
-
-	//transfere o vetor para a GPU.
-	cudaMemcpy(d_in, h_in, ARRAY_BYTES, cudaMemcpyHostToDevice);
-
-	stemmer<<<1, ARRAY_SIZE>>>(d_out, d_in);
-	cudaMemcpy(h_out, d_out, ARRAY_BYTES, cudaMemcpyDeviceToHost);
-
-	// print out the resulting array
-	for ( int i = 0; i < ARRAY_SIZE; i++) {
-		printf("%s", h_out[i]);
-		printf(((i % 4) != 3) ? "\t" : "\n");
-	}
-
-	cudaFree(d_in);
-	cudaFree(d_out);
-
 
 	clock_gettime( CLOCK_REALTIME, &stop);
 
