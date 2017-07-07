@@ -23,7 +23,7 @@
 
 }
 
-extern void cuda_stemmer(char *buffer, char **ptr, int numthreads)
+extern void cuda_stemmer(char *buffer, char **ptr, int o_numthreads)
 {
     int numberOfBlocks = 2;
     int threadsPerBlock = 5;
@@ -36,20 +36,25 @@ extern void cuda_stemmer(char *buffer, char **ptr, int numthreads)
     // Prepara para chamar kernel.
     const int ARRAY_SIZE = numthreads;
     const int ARRAY_BYTES = ARRAY_SIZE * sizeof(char);
+    const int TAMANHO_INTEIRO = sizeof(int);
 
 
     //declara ponteiros da GPU.
     char * d_in;
     char * d_out;
+    int d_numthreads;
 
     //alocate GPU memory
     cudaMalloc((void **) &d_in, ARRAY_BYTES);
     cudaMalloc((void **) &d_out, ARRAY_BYTES);
+    cudaMalloc((void **) &numthreads, TAMANHO_INTEIRO);
 
-    //transfere o vetor para a GPU.
-    cudaMemcpy(d_in, h_in, ARRAY_BYTES, cudaMemcpyHostToDevice);
+    //transfere os vetores para a GPU.
+    cudaMemcpy(d_in, buffer, ARRAY_BYTES, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_out, ptr, ARRAY_BYTES, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_numthreads, o_numthreads, TAMANHO_INTEIRO, cudaMemcpyHostToDevice);
 
-    stemmer<<<1, ARRAY_SIZE>>>(d_out, d_in);
+    stemmer<<<1, ARRAY_SIZE>>>(d_in, d_out, d_numthreads);
     cudaMemcpy(h_out, d_out, ARRAY_BYTES, cudaMemcpyDeviceToHost);
 
     // print out the resulting array
