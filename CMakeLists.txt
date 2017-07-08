@@ -13,6 +13,6 @@ set(SOURCE_FILES
         sequencial/stemmer.cpp
         sequencial/stemmer_inverso.cpp
         paralelo/stemmer_inverso_paralelo.cpp
-        teste_le_arq.cpp paralelo/kernel_stemmer.cu paralelo/myruntime.cu)
+        teste_le_arq.cpp paralelo/kernel_stemmer.cu paralelo/myruntime.cu teste_cmp.cpp)
 
 add_executable(stemmer ${SOURCE_FILES})

@@ -1,5 +1,18 @@
 #include "rules.h"
 
+/**
+ * Vetor de estrutura que guarda as regras para o processamento do stem.
+ * sufixo: o sufixo que será comparado com o final da palavra.
+ * sufixo_repete: indica se o sufixo repete ou não.
+ *                * - sufixo repete
+ *                vazio - sufixo não repete
+ * qtde: quantidade de caracteres que serão retirados do final da palavra. Pode ser diferente do tamanho do sufixo
+ *       porque nem sempre será retirado o sufixo completo da palavra.
+ * final: indica se o processamento do sufixo deve continuar para tentar retirar outro sufixo ou não. Ou seja, uma
+ *        mesma palavra pode ter mais de um sufixo retirado.
+ *        . indica que não deve continuar
+ *        > indica que pode continuar
+ */
 struct Regra regras[QUANTIDADE_REGRAS] =  {
     {"ai", "*", 2, "", "."},
     {"a", "*", 1, "", "."},

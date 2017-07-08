@@ -161,5 +161,69 @@ char* d_strstr (const char* string, const char* substring)
         nav_sub = (char*) substring;
     }
 
-    return nullptr;
+
+    //return nullptr;
+    return 0;
 }
+
+/**
+ * Compara 'n' caracteres das duas strings passadas como parâmetro.
+ *
+ * @param string Ponteiro para a região da memória da primeira string.
+ * @param string1 Ponteiro para a segunda string que será comparada.
+ * @param n Número máximo de caracteres que deve ser comparado.
+ * @return
+ */
+__device__
+bool d_strncmp (char* string, const char* string1, size_t n)
+{
+
+    while ((n > 0) && (*string != '\0'))
+    {
+        if (string[n] != string1[n])
+            return false;
+        --n;
+    }
+
+    return true;
+}
+/*int strncmp(const char* s1, const char* s2, size_t n)
+{
+    while(n--)
+        if(*s1++!=*s2++)
+            return *(unsigned char*)(s1 - 1) - *(unsigned char*)(s2 - 1);
+    return 0;
+}*/
+
+/**
+ * Concatena uma string em outra de acordo com o tamanho
+ *
+ * @param to Ponteiro para a região da memória que receberá a string.
+ * @param from Ponteiro para a string que será copiada.
+ * @param n Número máximo de caracteres que deve ser copiado.
+ * @return
+ */
+__device__
+char *d_strncat(char *to, const char *from, size_t n)
+{
+    char *ret = to;
+    while (*to)
+        to++;
+    while (n--)
+        if (!(*to++ = *from++))
+            return ret;
+    *to = 0;
+    return ret;
+}
+/*
+char *d_strncat(char *dest, const char *src, size_t n)
+{
+    char *ret = dest;
+    while (*dest)
+        dest++;
+    while (n--)
+        if (!(*dest++ = *src++))
+            return ret;
+    *dest = 0;
+    return ret;
+}*/
