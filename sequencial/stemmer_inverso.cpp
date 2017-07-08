@@ -5,6 +5,8 @@
 #include "rules.h"
 #include <time.h>
 
+// g++ stemmer_inverso.cpp rules_inverso.cpp
+// ./a.out
 
 //Retorna a regra, do array de regras, que pode ser aplicada a uma palavra. Se nenhuma regra puder ser aplicada então retorna -1.
 int retorna_regra(char *palavra_reversa, int num_regra) {
@@ -28,7 +30,7 @@ int retorna_regra(char *palavra_reversa, int num_regra) {
 	return -1;
 }
 
-//
+//Verifica se o caracter passado como parâmetro é vogal ou y.
 bool letra_eh_vogal(char letra) {
 	letra = tolower(letra);
 	
@@ -167,7 +169,7 @@ void minusculo(char palavra[]) {
 
 void le_arquivo()
 {
-	char url[] = "arquivos/lista-palavras-ingles.txt";
+	char url[] = "../arquivos/lista-palavras-ingles.txt";
 	FILE *arquivo;
 	char palavra[TAMANHO_PALAVRA];
 	char stem[TAMANHO_PALAVRA];

@@ -1,4 +1,4 @@
-#include "../sequencial/rules.h"
+#include "rules.h"
 
 struct Regra regras[QUANTIDADE_REGRAS] =  {
     {"ai", "*", 2, "", "."},
