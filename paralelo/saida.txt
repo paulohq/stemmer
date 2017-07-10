@@ -1,0 +1,200 @@
+Linha => 0 Palavra => AA Stem => aa
+
+Linha => 1 Palavra => AAH Stem => aah
+
+Linha => 2 Palavra => AAHED Stem => aah
+
+Linha => 3 Palavra => AAHING Stem => aah
+
+Linha => 4 Palavra => AAHS Stem => aah
+
+Linha => 5 Palavra => AAL Stem => aal
+
+Linha => 6 Palavra => AALII Stem => aali
+
+Linha => 7 Palavra => AALIIS Stem => aal
+
+Linha => 8 Palavra => AALS Stem => aal
+
+Linha => 9 Palavra => AARDVARK Stem => aardvark
+
+Linha => 10 Palavra => AARDVARKS Stem => aardvark
+
+Linha => 11 Palavra => AARDWOLF Stem => aardwolf
+
+Linha => 12 Palavra => AARDWOLVES Stem => aardwolv
+
+Linha => 13 Palavra => AARGH Stem => aargh
+
+Linha => 14 Palavra => AARRGH Stem => aarrgh
+
+Linha => 15 Palavra => AARRGHH Stem => aarrghh
+
+Linha => 16 Palavra => AAS Stem => aa
+
+Linha => 17 Palavra => AASVOGEL Stem => aasvogel
+
+Linha => 18 Palavra => AASVOGELS Stem => aasvogel
+
+Linha => 19 Palavra => AB Stem => ab
+
+Linha => 20 Palavra => ABA Stem => aba
+
+Linha => 21 Palavra => ABAC Stem => abac
+
+Linha => 22 Palavra => ABACA Stem => abac
+
+Linha => 23 Palavra => ABACAS Stem => abac
+
+Linha => 24 Palavra => ABACI Stem => abac
+
+Linha => 25 Palavra => ABACK Stem => aback
+
+Linha => 26 Palavra => ABACS Stem => abac
+
+Linha => 27 Palavra => ABACTERIAL Stem => abact
+
+Linha => 28 Palavra => ABACTINAL Stem => abactin
+
+Linha => 29 Palavra => ABACTOR Stem => abact
+
+Linha => 30 Palavra => ABACTORS Stem => abact
+
+Linha => 31 Palavra => ABACUS Stem => abac
+
+Linha => 32 Palavra => ABACUSES Stem => abac
+
+Linha => 33 Palavra => ABAFT Stem => abaft
+
+Linha => 34 Palavra => ABAKA Stem => abak
+
+Linha => 35 Palavra => ABAKAS Stem => abak
+
+Linha => 36 Palavra => ABALONE Stem => abalon
+
+Linha => 37 Palavra => ABALONES Stem => abalon
+
+Linha => 38 Palavra => ABAMP Stem => abamp
+
+Linha => 39 Palavra => ABAMPERE Stem => abamp
+
+Linha => 40 Palavra => ABAMPERES Stem => abamp
+
+Linha => 41 Palavra => ABAMPS Stem => abamp
+
+Linha => 42 Palavra => ABAND Stem => aband
+
+Linha => 43 Palavra => ABANDED Stem => aband
+
+Linha => 44 Palavra => ABANDING Stem => aband
+
+Linha => 45 Palavra => ABANDON Stem => abandon
+
+Linha => 46 Palavra => ABANDONED Stem => abandon
+
+Linha => 47 Palavra => ABANDONEE Stem => abandon
+
+Linha => 48 Palavra => ABANDONEES Stem => abandon
+
+Linha => 49 Palavra => ABANDONER Stem => abandon
+
+Linha => 50 Palavra => ABANDONERS Stem => abandon
+
+Linha => 51 Palavra => ABANDONING Stem => abandon
+
+Linha => 52 Palavra => ABANDONMENT Stem => abandon
+
+Linha => 53 Palavra => ABANDONMENTS Stem => abandon
+
+Linha => 54 Palavra => ABANDONS Stem => abandon
+
+Linha => 55 Palavra => ABANDS Stem => aband
+
+Linha => 56 Palavra => ABAPICAL Stem => abap
+
+Linha => 57 Palavra => ABAS Stem => aba
+
+Linha => 58 Palavra => ABASE Stem => aba
+
+Linha => 59 Palavra => ABASED Stem => aba
+
+Linha => 60 Palavra => ABASEDLY Stem => aba
+
+Linha => 61 Palavra => ABASEMENT Stem => aba
+
+Linha => 62 Palavra => ABASEMENTS Stem => aba
+
+Linha => 63 Palavra => ABASER Stem => aba
+
+Linha => 64 Palavra => ABASERS Stem => aba
+
+Linha => 65 Palavra => ABASES Stem => aba
+
+Linha => 66 Palavra => ABASH Stem => abash
+
+Linha => 67 Palavra => ABASHED Stem => abash
+
+Linha => 68 Palavra => ABASHEDLY Stem => abash
+
+Linha => 69 Palavra => ABASHES Stem => abash
+
+Linha => 70 Palavra => ABASHING Stem => abash
+
+Linha => 71 Palavra => ABASHLESS Stem => abashless
+
+Linha => 72 Palavra => ABASHMENT Stem => abash
+
+Linha => 73 Palavra => ABASHMENTS Stem => abash
+
+Linha => 74 Palavra => ABASIA Stem => abasi
+
+Linha => 75 Palavra => ABASIAS Stem => abasi
+
+Linha => 76 Palavra => ABASING Stem => aba
+
+Linha => 77 Palavra => ABASK Stem => abask
+
+Linha => 78 Palavra => ABATABLE Stem => abat
+
+Linha => 79 Palavra => ABATE Stem => abat
+
+Linha => 80 Palavra => ABATED Stem => abat
+
+Linha => 81 Palavra => ABATEMENT Stem => abat
+
+Linha => 82 Palavra => ABATEMENTS Stem => abat
+
+Linha => 83 Palavra => ABATER Stem => abat
+
+Linha => 84 Palavra => ABATERS Stem => abat
+
+Linha => 85 Palavra => ABATES Stem => abat
+
+Linha => 86 Palavra => ABATING Stem => abat
+
+Linha => 87 Palavra => ABATIS Stem => abat
+
+Linha => 88 Palavra => ABATISES Stem => abat
+
+Linha => 89 Palavra => ABATOR Stem => abat
+
+Linha => 90 Palavra => ABATORS Stem => abat
+
+Linha => 91 Palavra => ABATTIS Stem => abat
+
+Linha => 92 Palavra => ABATTISES Stem => abat
+
+Linha => 93 Palavra => ABATTOIR Stem => abattoir
+
+Linha => 94 Palavra => ABATTOIRS Stem => abattoir
+
+Linha => 95 Palavra => ABATTU Stem => abattu
+
+Linha => 96 Palavra => ABATURE Stem => abat 
+
+Linha => 97 Palavra => ABATURES Stem => abat 
+
+Linha => 98 Palavra => ABAXIAL Stem => abax
+
+Linha => 99 Palavra => ABAXILE Stem => abaxil
+

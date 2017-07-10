@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <cuda_runtime.h>
 
 //Quantidade de regras no vetor de regras.
-#define QUANTIDADE_REGRAS 116
+#define QUANTIDADE_REGRAS 120
 //Tamanho máximo da palavra.
 #define TAMANHO_PALAVRA 64
 #define BILLION  1000000000L
@@ -20,12 +21,11 @@
  *        . - indica que não deve continuar
  *        > - indica que pode continuar
  */
-struct Regra {
+/*struct Regra {
         char sufixo[10];
-        char sufixo_repete[2];
-        int qtde;
+        int qtde_retirada;
         char rep[3];
         char final[2];
 };
-
-extern struct Regra regras[QUANTIDADE_REGRAS];
+__device__
+extern struct Regra regras[QUANTIDADE_REGRAS];*/

@@ -4,6 +4,18 @@
 
 
 
+/**
+ * Determina se o caracter é espaço.
+ *
+ * @param s caracter.
+ * @return
+ */
+__device__
+bool d_isspace (char s)
+{
+    if (s == '\n' || s == ' ' || s == '\r' || s == '\0' )
+        return true;
+}
 
 /**
  * Determina a quantidade de bytes que compõem uma string codificada em ASCII.
@@ -12,7 +24,7 @@
  * @return
  */
 __device__
-        size_t d_strlen (char* s)
+        size_t d_strlen (char *s)
 {
     char* nav = s;
 
